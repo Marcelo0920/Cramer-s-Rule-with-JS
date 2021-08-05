@@ -1,18 +1,20 @@
 let matriz = [
-    [1, -3, 2, -3],
-    [5, 6, -1, 13],
-    [4, -1, 3, 8]
+    [1, -3, 2],
+    [5, 6, -1],
+    [4, -1, 3]
 ]
 
-function CramerInit(...matriz){
+let resultado = [-3, 13, 8];
+
+function CramerInit(resultado, ...matriz){
     let determinantes = [];
     let MatrizAux;
     console.log(matriz);
-    for (let counter = 1; counter <=3; counter++){
+    for (let counter = 1; counter < 3; counter++){
         MatrizAux = [...matriz];
         console.log(MatrizAux);
         for (let Iterador = 0; Iterador < 3; Iterador++){
-            MatrizAux[Iterador][counter] = matriz[Iterador][3];
+            MatrizAux[Iterador][counter] = resultado[Iterador];
         }
         determinantes.push(Cramer(...MatrizAux));
     }
