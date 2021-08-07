@@ -4,18 +4,24 @@ let matriz = [
     [4, -1, 3, 8]
 ]
 
-function CramerInit(...matriz){
+
+function CramerInit(matriz){
     let determinantes = [];
-    let MatrizAux;
-    console.log(matriz);
-    for (let counter = 1; counter <=3; counter++){
-        MatrizAux = [...matriz];
-        console.log(MatrizAux);
+    let MatrizAux = matriz;
+    let matrizCopy = matriz;
+  
+    for (let counter = 0; counter <3; counter++){
+        MatrizAux = matriz;
+        
         for (let Iterador = 0; Iterador < 3; Iterador++){
+            //console.log(MatrizAux[Iterador][3]);
             MatrizAux[Iterador][counter] = matriz[Iterador][3];
+            //MatrizAux[Iterador][counter] = matriz[Iterador][counter];
         }
-        determinantes.push(Cramer(...MatrizAux));
+        console.log(MatrizAux);
+        //determinantes.push(Cramer(MatrizAux));
     }
+    console.log(matrizCopy);
     console.log(determinantes);
 }
 
@@ -54,3 +60,14 @@ function Cramer(...matriz){
 //[1,0] => [2,1] => [3,2]
 //[2,0] => [3,1] => [4,2]
 //y si el contador supera el tamaño de la matriz este se resta por el tamaño de la misma, para dar la apariencia que es una matriz extendida
+
+let prueba = [
+    [1, 2 , 3, 11], 
+    [4, 5, 6, 12], 
+    [7, 8,9, 13]
+];
+
+function show(...prueba){
+    let aux = prueba;
+    console.log(aux);
+}
