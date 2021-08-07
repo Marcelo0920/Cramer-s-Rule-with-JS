@@ -1,31 +1,40 @@
-let matriz = [
+const matriz = [
     [1, -3, 2, -3],
     [5, 6, -1, 13],
     [4, -1, 3, 8]
 ]
 
+function Copier(matriz){
 
-function CramerInit(matriz){
-    let determinantes = [];
-    let MatrizAux = matriz;
-    let matrizCopy = matriz;
-  
-    for (let counter = 0; counter <3; counter++){
-        MatrizAux = matriz;
-        
-        for (let Iterador = 0; Iterador < 3; Iterador++){
-            //console.log(MatrizAux[Iterador][3]);
-            MatrizAux[Iterador][counter] = matriz[Iterador][3];
-            //MatrizAux[Iterador][counter] = matriz[Iterador][counter];
+    for(let counterAux = 0; counterAux < 3; counterAux++){
+        let MatrizCopia = [[],[],[]];
+        for (let counter = 0; counter <=3; counter++){
+            for (let Iterador = 0; Iterador < 3; Iterador++){
+            MatrizCopia[Iterador][counter] = matriz[Iterador][counter];
+            }
         }
-        console.log(MatrizAux);
-        //determinantes.push(Cramer(MatrizAux));
+        Iterador(MatrizCopia);
     }
-    console.log(matrizCopy);
+}
+
+function Iterador(matriz){
+    let determinantes = [];
+    for (let counter = 0; counter <=3; counter++){
+        determinantes.push(CramerInit(matriz, counter));
+    }
     console.log(determinantes);
 }
 
-function Cramer(...matriz){
+function CramerInit(matriz, counter){
+    let MatrizAux = matriz;  
+        for (let Iterador = 0; Iterador < 3; Iterador++){
+            MatrizAux[Iterador][counter] = matriz[Iterador][3];
+        }
+        return Cramer(MatrizAux);
+    }
+
+
+function Cramer(matriz){
     let answear1 = 0;
     for(let IteradorY = 0; IteradorY < 3; IteradorY++){
         let answearLoop = 1;
