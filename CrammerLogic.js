@@ -6,7 +6,6 @@ const matriz = [
 const Resultado = (...deter) => {
     let answears = [];
     console.log(deter);
-    let num;
     for(let counter = 0; counter < deter.length - 1; counter++){
         answears.push(deter[counter]/deter[deter.length-1]);
     }
