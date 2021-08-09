@@ -10,8 +10,9 @@ const Resultado = (...deter) => {
         answears.push(deter[counter]/deter[deter.length-1]);
     }
     console.log(answears);
+    return answears;   //Returning an array with the answears [x,y,z]
 }
-const Copier = (matriz) => {
+const Copier = (matriz) => {    /*You put the value of your Matrix in this function, and then it calculates the x,y,z values */
     let determinantes = [];
     for(let counterAux = 0; counterAux <= 3; counterAux++){
         let MatrizCopia = [[1],[1],[1]];
